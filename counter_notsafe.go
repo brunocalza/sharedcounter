@@ -13,6 +13,5 @@ func (c *NotSafeCounter) Add(num uint64) {
 }
 
 func (c *NotSafeCounter) Read() uint64 {
-	n := c.number
-	return n
+	return c.number
 }
