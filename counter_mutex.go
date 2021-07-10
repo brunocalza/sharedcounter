@@ -3,12 +3,12 @@ package counter
 import "sync"
 
 type MutexCounter struct {
-	mu     *sync.RWMutex
+	mu     sync.RWMutex
 	number uint64
 }
 
 func NewMutexCounter() Counter {
-	return &MutexCounter{&sync.RWMutex{}, 0}
+	return &MutexCounter{}
 }
 
 func (c *MutexCounter) Add(num uint64) {
